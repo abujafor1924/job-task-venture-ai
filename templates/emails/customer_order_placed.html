@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Order Placed Successfully</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      padding: 20px;
+    }
+    .email-container {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 8px;
+      max-width: 600px;
+      margin: 0 auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #4CAF50;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      text-align: left;
+      padding: 12px;
+      border-bottom: 1px solid #ddd;
+    }
+    .footer {
+      margin-top: 30px;
+      font-size: 13px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <div class="email-container">
+    <h2>Thank you for your order, {{ order.full_name }}!</h2>
+    <p>Your order (<strong>#{{ order.oid }}</strong>) has been placed successfully.</p>
+
+    <h3>Order Summary:</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Qty</th>
+          <th>Size</th>
+          <th>Color</th>
+          <th>Subtotal</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in order_item %}
+        <tr>
+          <td>{{ item.product.title }}</td>
+          <td>{{ item.qty }}</td>
+          <td>{{ item.size }}</td>
+          <td>{{ item.color }}</td>
+          <td>${{ item.sub_total }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <p><strong>Total Amount:</strong> ${{ order.total }}</p>
+
+    <h3>Shipping Address:</h3>
+    <p>
+      {{ order.full_name }}<br>
+      {{ order.address }}<br>
+      {{ order.city }}, {{ order.state }}, {{ order.country }} - {{ order.zipcode }}<br>
+      Phone: {{ order.phone }}<br>
+      Email: {{ order.email }}
+    </p>
+
+    <p>We will notify you once your order is shipped. If you have any questions, just reply to this email.</p>
+
+ 
+  </div>
+</body>
+</html>

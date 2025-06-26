@@ -1,0 +1,61 @@
+# Python related
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment folders
+env/
+venv/
+ENV/
+.venv/
+
+# Django related
+*.log
+*.pot
+*.pyc
+*.mo
+
+# Django migrations
+*/migrations/
+!*/migrations/__init__.py
+
+# Database files
+*.sqlite3
+
+# Static files (if collected locally)
+staticfiles/
+static/
+
+# Media files (uploaded by users)
+media/
+
+# IDE/editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# macOS files
+.DS_Store
+
+# Windows thumbnail cache files
+Thumbs.db
+
+# PyCharm
+*.iml
+
+# Coverage reports
+htmlcov/
+.coverage
+
+# dotenv files with secrets
+.env
+.env.*
+
+# pytest cache
+.pytest_cache/
+
+# mypy cache
+.mypy_cache/
+.dmypy.json
+dmypy.json
