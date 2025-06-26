@@ -23,7 +23,7 @@ A minimal **Ecommerce API** built using **Django** and **Django REST Framework**
 - Remove item from cart  
 - Update quantity of cart items  
 - View all cart items for a user  
-- Clear all items from cart  
+
 
 ### Order & Payment
 - Create order from cart items  
